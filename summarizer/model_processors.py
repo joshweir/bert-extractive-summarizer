@@ -42,7 +42,12 @@ class ModelProcessor(object):
 
   def calculate_ratio_from_num_sentences(self, total_sentences: int,
                                          num_sentences: int) -> float:
-    return num_sentences / total_sentences
+    if total_sentences <= 0:
+      return 1.0
+    ratio = num_sentences / total_sentences
+    if ratio > 1:
+      ratio = 1.0
+    return ratio
 
   def run(self,
           body: str,
