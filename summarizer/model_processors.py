@@ -49,8 +49,6 @@ class ModelProcessor(object):
     ratio = num_sentences / total_sentences
     if ratio > 1:
       ratio = 1.0
-    print("ratio", ratio, "total_sentences", total_sentences, "num_sentences",
-          num_sentences)
     return ratio
 
   def run(self,
