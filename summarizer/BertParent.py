@@ -41,6 +41,8 @@ class BertParent(object):
     self.model = base_model.from_pretrained(
         '/bert-model/', output_hidden_states=True)
     self.tokenizer = base_tokenizer.from_pretrained('/bert-model/')
+    print("model %s" % self.model)
+    print("tokenizer %s" % self.tokenizer)
     self.model.eval()
 
   def tokenize_input(self, text: str) -> torch.tensor:
