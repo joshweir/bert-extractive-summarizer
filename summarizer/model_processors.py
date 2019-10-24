@@ -44,6 +44,8 @@ class ModelProcessor(object):
                                          num_sentences: int) -> float:
     if total_sentences <= 0:
       return 1.0
+    if total_sentences > num_sentences * 2:
+      num_sentences = num_sentences - 1
     ratio = num_sentences / total_sentences
     if ratio > 1:
       ratio = 1.0
